@@ -1,0 +1,22 @@
+<div class="container-fluid bg-light" style="height: 100vh;">
+    <div class="row align-items-center" style="height: 100%;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 p-4 shadow-lg">
+            <div class="text-center">
+                <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Register here</h4>
+            </div>
+            <form action="" [formGroup]="registrationForm" (ngSubmit)="registerUser()">
+                <input type="text" class="form-control" placeholder="Enter username" formControlName="username">
+                <input type="email" class="form-control my-2" placeholder="Enter email" formControlName="email">
+                <input type="password" class="form-control" placeholder="Enter password" formControlName="password">
+                <div class="text-center my-2">
+                    <button type="submit" class="btn btn-outline-dark">Register</button>
+                </div>
+            </form>
+            <div>
+                Existing User? <a routerLink="" style="color: black; text-decoration: none;">Login here</a>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

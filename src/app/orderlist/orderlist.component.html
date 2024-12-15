@@ -1,0 +1,49 @@
+<div class="container-fluid" *ngIf="orderedItems">
+    <div class="row my-5" *ngFor="let orderItem of orderedItems">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <div class="card" style="width: 100%;">
+                <img [src]="orderItem.cake.image" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Name: {{orderItem.cake.name}}</h5>
+                    <p class="card-text">Weight: {{orderItem.cake.weight}}</p>
+                    <p class="card-text">Occassion: {{orderItem.cake.occasion}}</p>
+                    <p class="card-text">Shape: {{orderItem.cake.shape}}</p>
+                    <p class="card-text">Layers: {{orderItem.cake.layers}}</p>
+                    <p class="card-text">Price: {{orderItem.cake.price | currency: 'INR'}}</p>
+                    <p class="card-text">Ordered on: {{orderItem.created_at | date}}</p>
+                    <div>
+                        <hr>
+                        <button class="btn btn-outline-danger">Cancel Order</button>
+                        <hr>
+                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Add Review</button>
+                    </div>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form [formGroup]="reviewForm" action=""
+                                        (ngSubmit)="addingReview(orderItem.cake.id)">
+                                        <input type="text" class="form-control" placeholder="Add your review here"
+                                            formControlName="reviewText">
+                                        <div class="justify-content-center mt-3">
+                                            <button type="submit" class="btn btn-outline-primary" data-bs-dismiss="modal">Add Review</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container-fluid" *ngIf="cartItems">
+    <div class="row my-5" *ngFor="let cartItem of cartItems">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card" style="width: 100%;">
+                <img [src]="cartItem.cake.image" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Name: {{cartItem.cake.name}}</h5>
+                    <p class="card-text">Weight: {{cartItem.cake.weight}}</p>
+                    <p class="card-text">Occassion: {{cartItem.cake.occasion}}</p>
+                    <p class="card-text">Shape: {{cartItem.cake.shape}}</p>
+                    <p class="card-text">Layers: {{cartItem.cake.layers}}</p>
+                    <p class="card-text">Price: {{cartItem.cake.price | currency: 'INR'}}</p>
+                    <p class="card-text">Added to cart on: {{cartItem.created_at | date}}</p>
+                    <div>
+                        <hr>
+                        <button [routerLink]="['/cake/order', cartItem.cake.id]" class="btn btn-outline-success">Place Order</button>
+                        <hr>
+                        <button (click)="removeItem(cartItem.id)" class="btn btn-outline-danger">Remove Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>  

@@ -1,0 +1,33 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <div *ngIf="cakeDetails" class="card" style="width: 100%;">
+                <img [src]="cakeDetails.image" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{cakeDetails.name}}</h5>
+                    <p class="card-text">Weight: {{cakeDetails.weight}}</p>
+                    <p class="card-text">Occasion: {{cakeDetails.occasion}}</p>
+                    <p class="card-text">Price: {{cakeDetails.price | currency: 'INR'}}</p>
+                    <p class="card-text">Shape: {{cakeDetails.shape}}</p>
+                    <p class="card-text">Layer: {{cakeDetails.layers}}</p>
+                    <div class="text-center">
+                        <button (click)="addCakeToCart(cakeDetails.id)" class="btn btn-outline-primary">Add To
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="p-3" *ngIf="cakeDetails.get_reviews.length > 0">
+                    <div class="card p-3">
+                        <div class="text-center">
+                            <h4 style="font-family: Arial, Helvetica, sans-serif;">Reviews</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let review of cakeDetails.get_reviews">{{review.review_text}} by {{review.user}} on {{review.created_at}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>

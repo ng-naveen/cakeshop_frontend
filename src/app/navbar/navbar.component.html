@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/cake-list" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Cakes</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <button routerLink="/cart-list" class="btn btn-outline-dark my-1 me-2" style="width: 100px;"><i
+            class="fas fa-shopping-cart"></i>
+          Cart</button>
+        <button routerLink="/order-list" class="btn btn-outline-dark my-1 me-2" style="width: 100px;"><i
+            class="fas fa-shopping-bag"></i>
+          Orders</button>
+          <button (click)="signout()" class="btn btn-outline-dark my-1 me-2" style="width: 100px;"><i class="fas fa-sign-out-alt"></i>
+            Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>
