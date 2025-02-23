@@ -23,12 +23,14 @@ export class CakeService {
 
 
 
+
   updateAuthState(isLoggedIn: boolean) {
     this._authState.next(isLoggedIn);
   }
 
 
 
+  
   private getHeaders(): HttpHeaders | null {
     
     const TOKEN = localStorage.getItem('token') ?? null;

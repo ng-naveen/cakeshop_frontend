@@ -7,7 +7,7 @@ import { CakeService } from './services/cake.service';
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   
   title = 'cakeboxfrontend';
   isLogged = false;
@@ -15,8 +15,9 @@ export class AppComponent implements OnInit{
   constructor(private service: CakeService) { }
 
   ngOnInit(): void {
-    this.service.authState.subscribe((state) => {
-      this.isLogged = state
-    });
+    this.service.authState.subscribe(
+      (state) => {
+        this.isLogged = state;
+      });
   }
 }
